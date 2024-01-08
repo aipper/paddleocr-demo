@@ -1,5 +1,5 @@
 # 使用指定版本的pypy镜像
-FROM pypy:3.10-slim
+FROM python:3.13-rc-alpine
 # 设置工作目录
 WORKDIR /app
 # 将当前目录下的文件复制到工作目录
