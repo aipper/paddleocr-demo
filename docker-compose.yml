@@ -1,0 +1,7 @@
+version: '3'
+services:
+  pydemo:
+    build: .
+    container_name: pydemo
+    ports:
+      - 5000:5000
