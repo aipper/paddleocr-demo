@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello_world():
     ocr = PaddleOCR(use_angle_cls=True, lang="ch")
     url = request.args.get('url', '')
-    result = ocr.ocr(url, cls=True, det=False)
+    result = ocr.ocr(url, cls=True)
     return result
 
 
