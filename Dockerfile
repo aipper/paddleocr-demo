@@ -14,4 +14,4 @@ RUN pip install --upgrade pip  -i https://mirror.baidu.com/pypi/simple \
     # 预编译 python 文件为 .pyc 文件
 &&  python -m compileall .
 # 命令设置，此处运行你的App主程序
-CMD [ "gunicorn", "-c", "gunicorn_config.py", "--preload", "app:app" ]
+CMD [ "gunicorn", "-c", "gunicorn_config.py", "app:app" ]

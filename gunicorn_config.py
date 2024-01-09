@@ -11,6 +11,4 @@ worker_connections = 1000
 
 proc_name = 'gunicorn'
 
-accesslog = "/var/log/gunicorn/access.log" # 访问日志文件的路径
-errorlog = "/var/log/gunicorn/error.log"   # 错误日志文件的路径
 loglevel = "info"                         # 日志级别
