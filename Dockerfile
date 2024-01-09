@@ -1,5 +1,5 @@
 # 使用指定版本的pypy镜像
-FROM pypy:3.10-slim-bullseye
+FROM python:3.9.18-slim-bullseye
 # 替换阿里云源
 RUN  sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
    &&  apt-get update && apt-get install -y \
