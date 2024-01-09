@@ -3,7 +3,7 @@ FROM python:3.9.18-slim-bullseye
 # 替换阿里云源
 RUN  sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
    &&  apt-get update && apt-get install -y \
-    build-essential
+    build-essential libgl1-mesa-glx
 # 设置工作目录
 WORKDIR /app
 # 将当前目录下的文件复制到工作目录
