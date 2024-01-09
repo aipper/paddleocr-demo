@@ -10,8 +10,8 @@ WORKDIR /app
 COPY . /app
 RUN pip install --upgrade pip  -i https://mirror.baidu.com/pypi/simple \
 # 安装需要的包
-&& pip install --no-cache-dir flask paddleocr numpy -i https://mirror.baidu.com/pypi/simple
+&& pip install --no-cache-dir flask paddleocr gunicorn -i https://mirror.baidu.com/pypi/simple
 # 预编译Python文件为.pyc文件
-RUN find /app -name "*.py" -exec pypy3 -m py_compile "{}" \;
+RUN python -m compileall .
 # 命令设置，此处运行你的App主程序
-CMD [ "pypy3", "./app.py" ]
+CMD [ "gunicorn","-w", "4", "./app.py" ]
