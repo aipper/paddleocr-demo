@@ -10,8 +10,6 @@ WORKDIR /app
 COPY . /app
 RUN pip install --upgrade pip  -i https://mirror.baidu.com/pypi/simple \
 # 安装需要的包
-&& pip install --no-cache-dir flask paddlepaddle paddleocr gunicorn gevent -i https://mirror.baidu.com/pypi/simple \
-    # 预编译 python 文件为 .pyc 文件
-&&  python -m compileall .
+&& pip install --no-cache-dir flask paddlepaddle paddleocr gunicorn gevent -i https://mirror.baidu.com/pypi/simple 
 # 命令设置，此处运行你的App主程序
 CMD [ "gunicorn", "-c", "gunicorn_config.py", "app:app" ]

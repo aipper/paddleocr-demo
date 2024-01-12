@@ -5,3 +5,7 @@ services:
     container_name: pydemo
     ports:
       - 8000:8000
+    deploy:
+      resources:
+        reservations:
+          memory: 4G
